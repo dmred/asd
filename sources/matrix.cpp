@@ -212,3 +212,18 @@ int* matrix::operator [] (int i) const
 	return Getline;
 
 }
+bool matrix::operator ==(const matrix & m2) {
+	if (rows != m2.rows || columns != m2.columns) {
+		return false;
+	}
+
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < columns; ++j) {
+			if (matrix[i][j] != m2.matrix[i][j]) {
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
