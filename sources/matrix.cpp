@@ -1,9 +1,9 @@
-#include "Matrix.h"
+#include "matrix.h"
 #include <iostream>
 using namespace std;
 
 
-//Конструктор по умолчанию
+//ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
 matrix::matrix() :rows(0), columns(0), _matrix(nullptr)
 {
 
@@ -11,7 +11,7 @@ matrix::matrix() :rows(0), columns(0), _matrix(nullptr)
 
 
 
-//конструктор с параметрами кол-во строк, кол-во столбцов
+//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ ГЄГ®Г«-ГўГ® Г±ГІГ°Г®ГЄ, ГЄГ®Г«-ГўГ® Г±ГІГ®Г«ГЎГ¶Г®Гў
 matrix::matrix(int _rows, int _columns): rows(_rows), columns(_columns)
 {
 	create_memory();
@@ -23,7 +23,7 @@ matrix::matrix(int _rows, int _columns): rows(_rows), columns(_columns)
 
 
 
-//конструктор случайной матрицы
+//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г±Г«ГіГ·Г Г©Г­Г®Г© Г¬Г ГІГ°ГЁГ¶Г»
 matrix::matrix(int _rows, int _columns, int time) : rows(_rows), columns(_columns)
 {
 	create_memory();
@@ -39,7 +39,7 @@ matrix::matrix(int _rows, int _columns, int time) : rows(_rows), columns(_column
 
 
 
-//конструктор (глубокого) копирования 
+//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° (ГЈГ«ГіГЎГ®ГЄГ®ГЈГ®) ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї 
 matrix::matrix(const matrix & matrix): rows(matrix.rows), columns(matrix.columns)
 {
 	create_memory();
@@ -48,7 +48,7 @@ matrix::matrix(const matrix & matrix): rows(matrix.rows), columns(matrix.columns
 
 
 
-// Заполение матрицы из файла 
+// Г‡Г ГЇГ®Г«ГҐГ­ГЁГҐ Г¬Г ГІГ°ГЁГ¶Г» ГЁГ§ ГґГ Г©Г«Г  
 void matrix::get_from_file(string name)
 {
 	string full_name;
@@ -61,14 +61,14 @@ void matrix::get_from_file(string name)
 		fin.close();
 	}
 	else {
-		cout << "Ошибка, попробуйте еще раз";
+		cout << "ГЋГёГЁГЎГЄГ , ГЇГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГҐГ№ГҐ Г°Г Г§";
 		exit(100);
 	}
 }
 
 
 
-// деструктор
+// Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 matrix::~matrix()
 {
 	for (int i = 0; i < rows; i++)
@@ -79,7 +79,7 @@ matrix::~matrix()
 
 
 
-// печать матрицы
+// ГЇГҐГ·Г ГІГј Г¬Г ГІГ°ГЁГ¶Г»
 void matrix::print_matrix() const
 {
 	for (int i = 0; i < rows; i++) {
@@ -93,14 +93,14 @@ void matrix::print_matrix() const
 
 void matrix::get_line(int k)
 {
-	int *row_matrix;  //указатель
+	int *row_matrix;  //ГіГЄГ Г§Г ГІГҐГ«Гј
 	row_matrix = _matrix[k - 1];
 	for (int i = 0; i < columns; i++)
 		cout << " " << row_matrix[i];
 }
 
 
-// копирование матрицы
+// ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГҐ Г¬Г ГІГ°ГЁГ¶Г»
 void matrix::copy_matrix(const matrix & matrix)
 {
 	for (int i = 0; i <rows; i++)
@@ -110,7 +110,7 @@ void matrix::copy_matrix(const matrix & matrix)
 
 
 
-// перегрузка оператора = 
+// ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  = 
 matrix & matrix::operator=(const matrix & matrix)
 {
 	copy_matrix(matrix);
@@ -118,14 +118,14 @@ matrix & matrix::operator=(const matrix & matrix)
 }
 
 
-// передача номера строки, столбца и значения
+// ГЇГҐГ°ГҐГ¤Г Г·Г  Г­Г®Г¬ГҐГ°Г  Г±ГІГ°Г®ГЄГЁ, Г±ГІГ®Г«ГЎГ¶Г  ГЁ Г§Г­Г Г·ГҐГ­ГЁГї
 void matrix::set(int row, int columns, int set)
 {
 	_matrix[row][columns] = set;
 }
 
 
-// взятие элемента 
+// ГўГ§ГїГІГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ  
 int matrix::get(int row, int columns) const
 {
 	return _matrix[row][columns];
@@ -133,7 +133,7 @@ int matrix::get(int row, int columns) const
 
 
 
-// сумма построчно
+// Г±ГіГ¬Г¬Г  ГЇГ®Г±ГІГ°Г®Г·Г­Г®
 void matrix::get_sum_r(const matrix &matrix_1, const matrix &matrix_2, int i)
 {
 	for (int j = 0; j < get_num_cols(); j++)
@@ -142,10 +142,10 @@ void matrix::get_sum_r(const matrix &matrix_1, const matrix &matrix_2, int i)
 
 
 
-//перегрузка оператора + 
+//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  + 
 matrix operator+(const matrix &matrix_1, const matrix &matrix_2)
 {
-	matrix matrix(matrix_1.rows, matrix_1.columns);//создаем новую матрицу 
+	matrix matrix(matrix_1.rows, matrix_1.columns);//Г±Г®Г§Г¤Г ГҐГ¬ Г­Г®ГўГіГѕ Г¬Г ГІГ°ГЁГ¶Гі 
 
 	for (int i = 0; i < matrix.rows; i++)
 		matrix.get_sum_r(matrix_1, matrix_2, i);
@@ -153,7 +153,7 @@ matrix operator+(const matrix &matrix_1, const matrix &matrix_2)
 };
 
 
-//перегрузка оператора * 
+//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  * 
 matrix operator*(const matrix &matrix_1, const matrix &matrix_2) {
 	matrix matrix(matrix_1.rows, matrix_1.columns);
 	for (int i = 0; i < matrix.rows; i++)
@@ -161,14 +161,14 @@ matrix operator*(const matrix &matrix_1, const matrix &matrix_2) {
 	return matrix;
 };
 
-// количество строк
+// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ°Г®ГЄ
 int matrix::get_num_rows() const
 {
 	return rows;
 }
 
 
-// Произведение
+// ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
 void matrix::get_multi_r(const matrix &matrix_1, const matrix &matrix_2, int i)
 {
 	int value = 0;
@@ -185,14 +185,14 @@ void matrix::get_multi_r(const matrix &matrix_1, const matrix &matrix_2, int i)
 
 
 
-//Количество столбцов
+//ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ®Г«ГЎГ¶Г®Гў
 int matrix::get_num_cols() const
 {
 	return columns;
 }
 
 
-// выделяем память
+// ГўГ»Г¤ГҐГ«ГїГҐГ¬ ГЇГ Г¬ГїГІГј
 void matrix::create_memory()
 {
 	_matrix = new int*[rows];
@@ -203,10 +203,10 @@ void matrix::create_memory()
 
 
 
-// перегрузка оператора [] 
+// ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  [] 
 int* matrix::operator [] (int i) const
 {
-	int *Getline = new int[columns];// одномерный массив для хранения столбцов
+	int *Getline = new int[columns];// Г®Г¤Г­Г®Г¬ГҐГ°Г­Г»Г© Г¬Г Г±Г±ГЁГў Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї Г±ГІГ®Г«ГЎГ¶Г®Гў
 	for (int j = 0; j < columns; j++)
 		Getline[j] = _matrix[i - 1][j];
 	return Getline;
