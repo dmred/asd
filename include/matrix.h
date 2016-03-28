@@ -1,3 +1,7 @@
+#ifndef Matrix_h
+#define Matrix_h
+
+
 #pragma once
 #include "stdafx.h"
 #include <iostream>
@@ -37,6 +41,6 @@ public:
 	int **_matrix;
 };
 
-
+#endif
 
 
