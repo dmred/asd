@@ -21,16 +21,3 @@ SCENARIO("Matrix init", "[init]") {
 	}
 }
 
-SCENARIO("Matrix: operator +", "[addition]") {
-	auto rows = 3;
-	auto columns = 3;
-	matrix A(rows, columns);
-	matrix B(rows, columns);
-	matrix expected(rows, columns);
-	matrix result(rows, columns);
-	A.get_from_file("A3x3.txt");
-	B.get_from_file("B3x3.txt");
-	expected.get_from_file("A+B.txt");
-	result = A + B;
-	REQUIRE(result == expected);
-}
