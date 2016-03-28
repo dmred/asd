@@ -23,10 +23,10 @@ SCENARIO("Matrix init", "[init]") {
 }
 
 SCENARIO("Matrix: operator +", "[addition]") {
-	A matrix(rows, columns);
-	B matrix(rows, columns);
-	expected matrix(rows, columns);
-	result matrix(rows, columns);
+	matrix A(rows, columns);
+	matrix B(rows, columns);
+	matrix expected(rows, columns);
+	matrix result(rows, columns);
 	A.get_from_file("A3x3.txt");
 	B.get_from_file("B3x3.txt");
 	expected.get_from_file("A+B.txt");
