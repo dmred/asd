@@ -11,7 +11,7 @@ SCENARIO("Matrix init", "[init]") {
 
 		WHEN("Create instansce of Matrix") {
 
-			Matrix matrix(rows, columns);
+			matrix matrix(rows, columns);
 
 			THEN("The number of rows and columns must be preserved") {
 
