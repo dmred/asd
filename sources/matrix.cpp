@@ -216,7 +216,7 @@ int* matrix::operator [] (int i) const
 bool matrix::operator ==(const matrix & m) {
 	for (int i = 0; i < rows; ++i) {
 		for (int j = 0; j < columns; ++j) {
-			if (matrix[i][j] != m.matrix[i][j]) {
+			if (_matrix[i][j] != m._matrix[i][j]) {
 				return false;
 			}
 		}
