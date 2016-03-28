@@ -30,7 +30,6 @@ public:
 	friend matrix operator+(const matrix &matrix_1, const matrix &matrix_2);
 	friend matrix operator*(const matrix &matrix_1, const matrix &matrix_2);
 	int *operator[] (int i) const;
-	bool operator ==(const matrix & m);
 	void get_sum_r(const matrix &matrix_1, const matrix &matrix_2, int s);
 	void get_multi_r(const matrix &matrix_1, const matrix &matrix_2, int m);
 	void create_memory();
