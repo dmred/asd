@@ -27,7 +27,6 @@ public:
 	void print_matrix() const;
 	void copy_matrix(const matrix &Matrix);
 	matrix &operator=(const matrix &Matrix);
-	bool operator ==(const matrix& m2);
 	friend matrix operator+(const matrix &matrix_1, const matrix &matrix_2);
 	friend matrix operator*(const matrix &matrix_1, const matrix &matrix_2);
 	int *operator[] (int i) const;
@@ -39,7 +38,7 @@ public:
 	int get(int rows, int columns) const;
 	void set(int row, int columns, int set);
 
-
+private:
 	int rows;
 	int columns;
 	int **_matrix;
