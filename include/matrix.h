@@ -3,12 +3,15 @@
 
 
 #pragma once
-#include "stdafx.h"
+#include <string>
 #include <iostream>
+using namespace std;
 #include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-using namespace std;
+
 
 
 class matrix
