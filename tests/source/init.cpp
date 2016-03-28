@@ -25,6 +25,8 @@ SCENARIO("Matrix init", "[init]") {
 }
 
 SCENARIO("Matrix: operator +", "[addition]") {
+	auto rows = 3;
+	auto columns = 3;
 	matrix A(rows, columns);
 	matrix B(rows, columns);
 	matrix expected(rows, columns);
