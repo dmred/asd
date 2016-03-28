@@ -21,11 +21,11 @@ SCENARIO("Matrix init", "[init]") {
 	}
 }
 SCENARIO("Matrix +", "[addition]") {
-	matrix A = Matrix(3, 3);
+	matrix A = matrix(3, 3);
 	A.get_from_file("A3x3.txt");
-	matrix B = Matrix(3, 3);
+	matrix B = matrix(3, 3);
 	B.get_from_file("B3x3.txt");
-	matrix expected = Matrix(2, 2);
+	matrix expected = matrix(2, 2);
 	expected.get_from_file("A+B.txt");
 	matrix result = A + B;
 	REQUIRE(result == expected);
