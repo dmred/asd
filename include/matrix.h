@@ -37,7 +37,7 @@ public:
 	int get_num_cols() const;
 	int get(int rows, int columns) const;
 	void set(int row, int columns, int set);
-
+	bool operator== (const matrix &right) const; 
 private:
 	int rows;
 	int columns;
