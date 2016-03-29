@@ -49,18 +49,16 @@ SCENARIO("matrix: operator ==", "[equal]") {
 	REQUIRE(f);
 }
 SCENARIO("matrix: get_from_file()", "[filling]") {
-	matrix A;
-	int** a = new int*[2];
+	matrix A;	
+	bool f = true;
+	int a[2][2];
 	int *row;
-	for (int i = 0; i < 1; i++) {
-		a[i] = new int[2];
-	}
 	a[0][0] = 1;
 	a[0][1] = 1;
 	a[1][0] = 1;
 	a[1][1] = 1;
 	A.get_from_file("A2x2.txt");
-	bool f = true;
+
 	for (int i = 0; i < 1; i++) {
 		row = A[i];
 		for (int j = 0; j < 1; j++) {
