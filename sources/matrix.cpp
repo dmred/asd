@@ -208,7 +208,7 @@ int* matrix::operator [] (int i) const
 {
 	int *Getline = new int[columns];// îäíîìåðíûé ìàññèâ äëÿ õðàíåíèÿ ñòîëáöîâ
 	for (int j = 0; j < columns; j++)
-		Getline[j] = _matrix[i - 1][j];
+		Getline[j] = _matrix[i][j];
 	return Getline;
 
 }
