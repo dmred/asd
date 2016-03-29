@@ -12,10 +12,13 @@ SCENARIO("Matrix init", "[init]") {
 		WHEN("Create instansce of Matrix") {
 
 			matrix matrix(rows, columns);
+			matrix a;
 			THEN("The number of rows and columns must be preserved") {
 
 				REQUIRE(matrix.get_num_rows() == rows);
 				REQUIRE(matrix.get_num_cols() == columns);
+				REQUIRE(a.get_num_rows() == 0);
+				REQUIRE(a.get_num_cols() == 0);
 			}
 		}
 	}
@@ -41,4 +44,25 @@ SCENARIO("matrix *", "[addition]") {
 	expected.get_from_file("A*B2x2.txt");
 	matrix result = A * B;
 	REQUIRE(result == expected);
+}
+SCENARIO("matrix: operator [](index)", "[get row]") {
+	matrix A;
+	int* a = new int[2]; a[0] = 1; a[1] = 2;
+	A.get_from_file("A2x2.txt");
+	bool f = true;
+	int* res = A[0];
+	for (int i = 0; i < 2; i++) {
+		if (a[i] != res[i]) {
+			f = false;
+		}
+	}
+	REQUIRE(f);
+}
+
+SCENARIO("matrix: operator ==", "[equal]") {
+	matrix A, B;
+	A.get_from_file("A2x2.txt");
+	B.get_from_file("A2x2.txt");
+	bool f = (A == B);
+	REQUIRE(f);
 }
