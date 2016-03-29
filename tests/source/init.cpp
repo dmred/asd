@@ -12,7 +12,7 @@ SCENARIO("Matrix init", "[init]") {
 		WHEN("Create instansce of Matrix") {
 
 			matrix matrix(rows, columns);
-			matrix a;
+			matrix a();
 			THEN("The number of rows and columns must be preserved") {
 
 				REQUIRE(matrix.get_num_rows() == rows);
