@@ -52,7 +52,7 @@ matrix::matrix(const matrix & matrix): rows(matrix.rows), columns(matrix.columns
 void matrix::get_from_file(string name)
 {
 	string full_name;
-	full_name = name  + ".txt";
+	full_name = name;
 	ifstream fin(full_name);
 	if (fin.is_open()) {
 		for (int i = 0; i < rows; i++)
