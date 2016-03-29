@@ -52,17 +52,14 @@ SCENARIO("matrix: get_from_file()", "[filling]") {
 	matrix A;	
 	bool f = true;
 	int a[2][2];
-	int *row;
 	a[0][0] = 1;
 	a[0][1] = 1;
 	a[1][0] = 1;
 	a[1][1] = 1;
 	A.get_from_file("A2x2.txt");
-
 	for (int i = 0; i < 1; i++) {
-		row = A[i];
 		for (int j = 0; j < 1; j++) {
-			if (a[i][j] != row[j]) {
+			if (a[i][j] != A[i][j]) {
 				f = false;
 			}
 		}
