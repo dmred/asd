@@ -52,7 +52,7 @@ SCENARIO("matrix: get_from_file()", "[filling]") {
 	matrix A;
 	int** a = new int*[2];
 	int *row;
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < 1; i++) {
 		a[i] = new int[2];
 	}
 	a[0][0] = 1;
