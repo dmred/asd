@@ -212,3 +212,16 @@ int* matrix::operator [] (int i) const
 	return Getline;
 
 }
+
+bool matrix::operator== (const matrix &right) const// оператор сравнения
+{
+	if (rows != right.rows || columns != right.columns)
+		return false; // матрицы с разным количеством элементов
+
+	for (int ix = 0; ix < rows; ix++)
+		for (int jx = 0; jx < columns; jx++)
+			if (_matrix[ix][jx] != right._matrix[ix][jx])
+				return false; // матрицы не равны
+
+	return true; // матрицы равны
+}
