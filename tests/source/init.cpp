@@ -10,7 +10,6 @@ SCENARIO("Matrix init", "[init]") {
 		auto columns = 3;
 
 		WHEN("Create instansce of Matrix") {
-
 			matrix matrix(rows, columns);
 			THEN("The number of rows and columns must be preserved") {
 
@@ -40,19 +39,6 @@ SCENARIO("matrix *", "[addition]") {
 	expected.get_from_file("A*B2x2.txt");
 	matrix result = A * B;
 	REQUIRE(result == expected);
-}
-SCENARIO("matrix: operator [](index)", "[get row]") {
-	matrix A;
-	int* a = new int[2]; a[0] = 1; a[1] = 2;
-	A.get_from_file("A2x2.txt");
-	bool f = true;
-	int* res = A[0];
-	for (int i = 0; i < 2; i++) {
-		if (a[i] != res[i]) {
-			f = false;
-		}
-	}
-	REQUIRE(f);
 }
 
 SCENARIO("matrix: operator ==", "[equal]") {
