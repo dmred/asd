@@ -61,9 +61,9 @@ SCENARIO("matrix: get_from_file()", "[filling]") {
 	a[1][1] = 1;
 	A.get_from_file("A2x2.txt");
 	bool f = true;
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < 1; i++) {
 		row = A[i];
-		for (int j = 0; j < 2; j++) {
+		for (int j = 0; j < 1; j++) {
 			if (a[i][j] != row[j]) {
 				f = false;
 			}
