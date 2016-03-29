@@ -30,7 +30,6 @@ SCENARIO("matrix +", "[addition]") {
 	B.get_from_file("B2x2.txt");
 	matrix expected = matrix(2, 2);
 	expected.get_from_file("A+B2x2.txt");
-
 	matrix result = A + B;
 	REQUIRE(result == expected);
 }
