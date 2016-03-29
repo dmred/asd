@@ -48,16 +48,3 @@ SCENARIO("matrix: operator ==", "[equal]") {
 	bool f = (A == B);
 	REQUIRE(f);
 }
-SCENARIO("matrix: operator [](index)", "[get row]") {
-	matrix A;
-	int* a = new int[2]; a[0] = 1; a[1] = 1;
-	A.get_from_file("A2x2.txt");
-	bool f = true;
-	int* res = A[0];
-	for (int i = 0; i < 2; i++) {
-		if (a[i] != res[i]) {
-			f = false;
-		}
-	}
-	REQUIRE(f);
-}
