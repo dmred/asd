@@ -56,9 +56,9 @@ SCENARIO("matrix: get_from_file()", "[filling]") {
 		a[i] = new int[2];
 	}
 	a[0][0] = 1;
-	a[0][1] = 2;
-	a[1][0] = 3;
-	a[1][1] = 4;
+	a[0][1] = 1;
+	a[1][0] = 1;
+	a[1][1] = 1;
 	A.get_from_file("A2x2.txt");
 	bool f = true;
 	for (int i = 0; i < 2; i++) {
