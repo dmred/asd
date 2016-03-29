@@ -50,7 +50,7 @@ SCENARIO("matrix: operator ==", "[equal]") {
 }
 SCENARIO("matrix: operator [](index)", "[get row]") {
 	matrix A;
-	int* a = new int[2]; a[0] = 1; a[1] = 1;
+	int* a = new int[1]; a[0] = 1; a[1] = 1;
 	A.get_from_file("A2x2.txt");
 	bool f = true;
 	int* res = A[0];
