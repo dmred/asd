@@ -54,7 +54,7 @@ SCENARIO("matrix: operator [](index)", "[get row]") {
 	A.get_from_file("A2x2.txt");
 	bool f = true;
 	int* res = A[0];
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < 1; i++) {
 		if (a[i] != res[i]) {
 			f = false;
 		}
