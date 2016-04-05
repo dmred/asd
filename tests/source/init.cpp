@@ -48,7 +48,7 @@ SCENARIO("matrix: operator ==", "[equal]") {
 	bool f = (A == B);
 	REQUIRE(f);
 }
-SCENARIO("Matrix ptint_matrix", "[print_matrix]") {
+SCENARIO("matrix print_matrix", "[print_matrix]") {
 	matrix A = matrix(2,2);
 	bool f=false;
 	if (A.print_matrix(2,2))
