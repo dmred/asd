@@ -1,5 +1,3 @@
-#ifndef Matrix_h
-#define Matrix_h
 
 
 #pragma once
@@ -44,6 +42,6 @@ private:
 	int **_matrix;
 };
 
-#endif
+
 
 
