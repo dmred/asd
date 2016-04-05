@@ -6,7 +6,6 @@ using namespace std;
 //Êîíñòðóêòîð ïî óìîë÷àíèþ
 matrix::matrix() :rows(0), columns(0), _matrix(nullptr)
 {
-
 }
 
 
